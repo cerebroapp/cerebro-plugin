@@ -17,6 +17,7 @@ module.exports = {
       path.resolve('./node_modules'),
     ]
   },
+  target: 'electron-renderer',
   module: {
     rules: [{
       test: /\.jsx?$/,
