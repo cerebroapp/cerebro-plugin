@@ -13,7 +13,8 @@
     "node": ">=4"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "debug": "./scripts/debug"
   },
   "main": "dist/index.js",
   "keywords": [

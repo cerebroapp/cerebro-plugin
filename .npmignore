@@ -1,5 +1,6 @@
 src
 .babelrc
 node_modules
+scripts
 screenshot.png
 webpack.config.js

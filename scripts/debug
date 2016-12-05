@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+symlink="${HOME}/Library/Application Support/Cerebro/plugins/node_modules/${PWD##*/}"
+ln -s "${PWD}" "$symlink"
+trap "rm \"$symlink\"" SIGHUP SIGINT SIGTERM
+./node_modules/.bin/webpack --watch
