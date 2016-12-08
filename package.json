@@ -13,8 +13,9 @@
     "node": ">=4"
   },
   "scripts": {
-    "build": "webpack",
-    "debug": "./scripts/debug"
+    "build": "webpack && babili dist -d dist --compact --no-comments",
+    "debug": "./scripts/debug",
+    "prepublish": "rm -rf ./dist && npm run build"
   },
   "main": "dist/index.js",
   "keywords": [
@@ -26,9 +27,10 @@
     "babel-loader": "^6.2.8",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babili": "0.0.9",
+    "cerebro-tools": "^0.1.0",
     "css-loader": "^0.26.0",
     "react": "^15.4.1",
-    "cerebro-tools": "^0.1.0",
     "style-loader": "^0.13.1",
     "webpack": "2.1.0-beta.27"
   }
