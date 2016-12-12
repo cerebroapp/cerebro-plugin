@@ -23,9 +23,7 @@ ln -s ~/projects/cerebro-emoj ~/Library/Application\ Support/Cerebro/plugins/cer
 ```
 
 ## Documentation
-> TODO: here will be a link to plugins documentations and tutorials.
-
-Don't forget to run `npm run build` and reload Cerebro window to see your plugin changes.
+Use Cerebro [documentation](https://github.com/KELiON/cerebro/blob/master/docs/plugins.md) for plugins.
 
 ## Related
 
