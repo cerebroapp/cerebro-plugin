@@ -17,9 +17,14 @@
 
 Now you can open developer tools in Cerebro using <kbd>alt+cmd+i</kbd>. In developer tools you can use <kbd>cmd+r</kbd> to reload application to see changes in your plugin.
 
-Put your plugin directory to `~/Library/Application\ Support/Cerebro/plugins/`. Easiest way to do it is to use symbolic links, i.e.
+Put your plugin directory to `~/Library/Application\ Support/Cerebro/plugins/`. Easiest way to do it is to use symbolic links with built-in command:
 ```
-ln -s ~/projects/cerebro-emoj ~/Library/Application\ Support/Cerebro/plugins/cerebro-emoj
+npm run debug
+```
+
+Or if you running Cerebro from source code:
+```
+npm run debug -- dev
 ```
 
 ## Documentation
@@ -27,8 +32,8 @@ Use Cerebro [documentation](https://github.com/KELiON/cerebro/blob/master/docs/p
 
 ## Related
 
-- [Cerebro](http://github.com/KELiON/cerebro) – main repo for Cerebro app;
-- [cerebro-emoj](https://github.com/KELiON/cerebro-emoj) – example Cerebro plugin to look for emojis. Check this repo commit by commit to see how to create Cerebro plugins from scratch.
+* [Cerebro](http://github.com/KELiON/cerebro) – main repo for Cerebro app;
+* [cerebro tools](http://github.com/KELiON/cerebro-tools) – package with tools to simplify package creation;
 
 ## License
 
