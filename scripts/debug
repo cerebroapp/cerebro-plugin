@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
-if [ $1 = "dev" ]; then
-  appname="Electron"
+if [[ $1 == "dev" ]]; then
+	appname="Electron"
 else
-  appname="Cerebro"
+	appname="Cerebro"
 fi
-symlink="${HOME}/Library/Application Support/${appname}/plugins/node_modules/${PWD##*/}"
+
+OS=$(uname -s)
+if [[ $OS == "Darwin" ]]; then
+	symlink="${HOME}/Library/Application Support/${appname}/plugins/node_modules/${PWD##*/}"
+elif [[ $OS == "Linux" ]]; then
+	symlink="${HOME}/.config/${appname}/plugins/node_modules/${PWD##*/}"
+elif [[ $OS == "WindowsNT" ]]; then
+	symlink="%appdata%\Cerebro\plugins\node_modules\\${PWD##*/}"
+else
+	echo "You may need to manually create a symlink for debugging"
+fi
+
 ln -s "${PWD}" "$symlink"
 trap "rm \"$symlink\"" SIGHUP SIGINT SIGTERM
 ./node_modules/.bin/webpack --watch
