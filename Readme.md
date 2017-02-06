@@ -11,11 +11,9 @@
 * Open [Cerebo app](http://www.cerebroapp.com);
 * Enter `settings` and open preview for Cerebro Settings;
 * Turn on developer mode;
-* Restart Cerebro app.
+* Now you have development submenu in tray menu. Choose reload and DevTools (main) to open developer tools.
 
 ![](screenshot.png)
-
-Now you can open developer tools in Cerebro using <kbd>alt+cmd+i</kbd>. In developer tools you can use <kbd>cmd+r</kbd> to reload application to see changes in your plugin.
 
 Put your plugin directory to `~/Library/Application\ Support/Cerebro/plugins/`. Easiest way to do it is to use symbolic links with built-in command:
 ```
