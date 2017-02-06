@@ -20,6 +20,9 @@ Put your plugin directory to `~/Library/Application\ Support/Cerebro/plugins/`. 
 npm run debug
 ```
 
+
+> On windows use [cygwin](https://www.cygwin.com/) or [git bash](https://git-scm.com/download/win) instead of cmd.exe and `./scripts/debug` command insttead of `npm run debug`
+
 Or if you running Cerebro from source code:
 ```
 npm run debug -- dev

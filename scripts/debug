@@ -1,21 +1,31 @@
-#!/usr/bin/env bash
+#!/bin/sh
 if [[ $1 == "dev" ]]; then
 	appname="Electron"
 else
 	appname="Cerebro"
 fi
 
-OS=$(uname -s)
-if [[ $OS == "Darwin" ]]; then
-	symlink="${HOME}/Library/Application Support/${appname}/plugins/node_modules/${PWD##*/}"
-elif [[ $OS == "Linux" ]]; then
-	symlink="${HOME}/.config/${appname}/plugins/node_modules/${PWD##*/}"
-elif [[ $OS == "WindowsNT" ]]; then
-	symlink="%appdata%\Cerebro\plugins\node_modules\\${PWD##*/}"
-else
-	echo "You may need to manually create a symlink for debugging"
-fi
+case "$(uname -s)" in
 
+   Darwin)
+     symlink="${HOME}/Library/Application Support/${appname}/plugins/node_modules/${PWD##*/}"
+     ;;
+
+   Linux)
+     symlink="${HOME}/.config/${appname}/plugins/node_modules/${PWD##*/}"
+     ;;
+
+   CYGWIN*|MINGW32*|MINGW64*|MSYS*)
+     symlink="${APPDATA}\\${appname}\plugins\node_modules\\${PWD##*/}"
+     ;;
+
+   *)
+     echo "Unknown system. Please, open an issue in https://github.com/KELiON/cerebro-plugin/issues"
+     exit
+     ;;
+esac
+
+echo "Creating symlink: $symlink -> ${PWD}"
 ln -s "${PWD}" "$symlink"
-trap "rm \"$symlink\"" SIGHUP SIGINT SIGTERM
+trap "echo 'Deleting symlink' && rm -rf \"$symlink\"" SIGHUP SIGINT SIGTERM
 ./node_modules/.bin/webpack --watch
