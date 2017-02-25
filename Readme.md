@@ -8,7 +8,7 @@
 * Run `npm install` – you are ready to build your plugin!
 
 ## Debugging your plugin
-* Open [Cerebo app](http://www.cerebroapp.com);
+* Open [Cerebro app](http://www.cerebroapp.com);
 * Enter `settings` and open preview for Cerebro Settings;
 * Turn on developer mode;
 * Now you have development submenu in tray menu. Choose reload and DevTools (main) to open developer tools.
