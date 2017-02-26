@@ -21,11 +21,16 @@ npm run debug
 ```
 
 
-> On windows use [cygwin](https://www.cygwin.com/) or [git bash](https://git-scm.com/download/win) instead of cmd.exe and `./scripts/debug` command insttead of `npm run debug`
+> On windows use [cygwin](https://www.cygwin.com/) or [git bash](https://git-scm.com/download/win) instead of cmd.exe and `./scripts/debug` command instead of `npm run debug`.
+If you choose to use cmd.exe, use `npm run debug:windows`
 
 Or if you running Cerebro from source code:
 ```
 npm run debug -- dev
+```
+Or in cmd.exe
+```
+npm run debug:windows dev
 ```
 
 ## Documentation
