@@ -1,5 +1,7 @@
 # Cerebro Plugin
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/KELiON/cerebro-plugin.svg)](https://greenkeeper.io/)
+
 > It is boilerplate to create plugins for [Cerebro app](http://www.cerebroapp.com)
 
 ## Usage
