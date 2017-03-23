@@ -10,5 +10,5 @@ SET symlink="%APPDATA%\%appname%\plugins\node_modules\%dirname%"
 
 echo "Creating symlink: %symlink% -> %cd%"
 
-mklink /d %symlink% "%cd%"
+mklink /d "%symlink%" "%cd%"
 start "" /wait node_modules\.bin\webpack --watch
