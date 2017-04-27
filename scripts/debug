@@ -9,14 +9,17 @@ case "$(uname -s)" in
 
    Darwin)
      symlink="${HOME}/Library/Application Support/${appname}/plugins/node_modules/${PWD##*/}"
+     trap "echo 'Deleting symlink' && rm -rf \"$symlink\"" SIGHUP SIGINT SIGTERM
      ;;
 
    Linux)
      symlink="${HOME}/.config/${appname}/plugins/node_modules/${PWD##*/}"
+     trap "echo 'Deleting symlink' && rm -rf \"$symlink\"" HUP INT TERM
      ;;
 
    CYGWIN*|MINGW32*|MINGW64*|MSYS*)
      symlink="${APPDATA}\\${appname}\plugins\node_modules\\${PWD##*/}"
+     trap "echo 'Deleting symlink' && rm -rf \"$symlink\"" SIGHUP SIGINT SIGTERM
      ;;
 
    *)
@@ -27,5 +30,4 @@ esac
 
 echo "Creating symlink: $symlink -> ${PWD}"
 ln -s "${PWD}" "$symlink"
-trap "echo 'Deleting symlink' && rm -rf \"$symlink\"" SIGHUP SIGINT SIGTERM
 ./node_modules/.bin/webpack --watch
