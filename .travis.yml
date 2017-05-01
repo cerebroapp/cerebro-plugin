@@ -1,0 +1,26 @@
+sudo: required
+dist: trusty
+
+language: node_js
+
+matrix:
+  include:
+    - os: linux
+      node_js: 6
+      env: CC=clang CXX=clang++ npm_config_clang=1
+      compiler: clang
+
+branches:
+  only:
+    - master
+
+before_install:
+  - npm install -g npm@3.10.8
+
+cache: yarn
+
+install:
+- npm install
+
+script:
+- npm run test
