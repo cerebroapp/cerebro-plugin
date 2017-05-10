@@ -26,19 +26,23 @@
   ],
   "devDependencies": {
     "babel-cli": "^6.18.0",
-    "babel-core": "^6.24.1",
     "babel-loader": "^6.2.8",
     "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.8.0",
     "babili": "0.0.9",
-    "cerebro-tools": "^0.1.0",
     "chai": "^3.5.0",
     "css-loader": "^0.26.0",
     "mocha": "^3.3.0",
-    "react": "^15.4.1",
     "rimraf": "^2.6.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "2.1.0-beta.27"
+    "webpack": "2.5.1"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "cerebro-ui": "^0.0.9",
+    "cerebro-tools": "^0.1.0"
   }
 }
