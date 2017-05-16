@@ -1,8 +1,6 @@
-'use strict';
-
 const fn = ({term, display, actions}) => {
 };
 
-module.exports = {
+export {
   fn
 }
